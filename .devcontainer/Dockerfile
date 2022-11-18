@@ -8,7 +8,7 @@ RUN pacman -S base base-devel git linux-tools \
 	--needed --noconfirm --noprogressbar
 
 # Additional packages
-RUN pacman -S grc ripgrep fd bat gdu lf age make meson cmake neovim zsh \
+RUN pacman -S grc ripgrep fd bat gdu lf age meson cmake neovim zsh \
 	gnome-keyring xdg-utils chezmoi \
 	--needed --noconfirm --noprogressbar
 
@@ -30,6 +30,6 @@ RUN useradd -mG wheel codespace && \
 
 # AUR helper
 WORKDIR /tmp
-USER arthur
+USER codespace
 RUN curl 'https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=paru-bin' -o PKGBUILD && \
 	cd /tmp/paru-bin && makepkg -csi --noconfirm --noprogressbar
