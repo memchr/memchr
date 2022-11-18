@@ -9,7 +9,7 @@ RUN pacman -S base base-devel git linux-tools \
 
 # Additional packages
 RUN pacman -S grc ripgrep fd bat gdu lf age meson cmake neovim fzf zsh \
-	gnome-keyring xdg-utils chezmoi \
+	gnome-keyring chezmoi libxkbfile nss libnotify libxss lsof \
 	--needed --noconfirm --noprogressbar
 
 # Additional configurations
