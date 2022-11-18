@@ -29,7 +29,8 @@ RUN useradd -mG wheel codespace && \
 	chsh codespace -s /bin/zsh
 
 # AUR helper
-WORKDIR /tmp
+WORKDIR /home/codespace
 USER codespace
-RUN curl 'https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=paru-bin' -o PKGBUILD && \
-	cd /tmp/paru-bin && makepkg -csi --noconfirm --noprogressbar
+RUN mkdir paru-bin && cd paru-bin && \
+	curl 'https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=paru-bin' -o PKGBUILD && \
+	makepkg -csi --noconfirm --noprogressbar
