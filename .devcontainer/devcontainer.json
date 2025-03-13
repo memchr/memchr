@@ -1,26 +1,27 @@
 {
-	"$schema": "https://raw.githubusercontent.com/devcontainers/spec/main/schemas/devContainer.schema.json",
-	"name": "Arch Linux",
-	"build": {
-		"dockerfile": "Dockerfile",
-		"context": "."
-	},
-	"forwardPorts": [
-		"22:8022",
-		"80:8080",
-		"433:8433",
-		8000,
-		12345
-	],
-	"runArgs": [
-		"--cap-add=SYS_PTRACE",
-		"--security-opt",
-		"seccomp=unconfined"
-	],
-	"remoteUser": "codespace",
-	"containerUser": "codespace",
-	"containerEnv": {
-		"TERM": "xterm-256color",
-		"EDITOR": "nvim"
-	}
+  "$schema": "https://raw.githubusercontent.com/devcontainers/spec/main/schemas/devContainer.schema.json",
+  "name": "Arch Linux",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": "."
+  },
+  "forwardPorts": [
+    "22:8022",
+    "80:8080",
+    "433:8433",
+    8000,
+    12345
+  ],
+  "privileged": true,
+  "runArgs": [
+    "--cap-add=SYS_PTRACE",
+    "--security-opt",
+    "seccomp=unconfined"
+  ],
+  "remoteUser": "codespace",
+  "containerUser": "codespace",
+  "containerEnv": {
+    "TERM": "xterm-256color",
+    "EDITOR": "nvim"
+  }
 }
