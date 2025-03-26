@@ -22,6 +22,14 @@
   "containerUser": "codespace",
   "containerEnv": {
     "TERM": "xterm-256color",
-    "EDITOR": "nvim"
-  }
+    "EDITOR": "nvim",
+    "DOCKER_BUILDKIT": "1"
+  },
+  "mounts": [
+    {
+      "source": "dind-var-lib-docker-${devcontainerId}",
+      "target": "/var/lib/docker",
+      "type": "volume"
+    }
+  ]
 }
